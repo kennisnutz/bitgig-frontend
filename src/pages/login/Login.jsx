@@ -12,7 +12,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username, password);
+
     try {
       const res = await newRequest.post('/auth/login', { username, password });
 
@@ -21,7 +21,6 @@ function Login() {
       navigate('/');
     } catch (err) {
       setError(err.response.data);
-      // console.log(err.response.data);
     }
   };
 
