@@ -1,0 +1,47 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import './Featured.scss';
+
+const Featured = () => {
+  const [input, setInput] = useState();
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate(`/gigs?search=${input}`);
+  };
+
+  return (
+    <div className="featured">
+      <div className="container">
+        <div className="left">
+          <h1>Find the best web3 freelance services for your project needs</h1>
+          <div className="search">
+            <div className="searchInput">
+              <img src="./img/search.png" alt="" />
+              <input
+                type="text"
+                placeholder='Try "Build a mobile app"'
+                onChange={(e) => setInput(e.target.value)}
+              />
+            </div>
+            <button onClick={handleSubmit}>Search</button>
+          </div>
+          <div className="popular">
+            <span>Popular searches:</span>
+            <button>Web Design</button>
+            <button>Smart contract Development</button>
+            <button>WordPress</button>
+            <button>Graphic design</button>
+            <button>Copywritting</button>
+          </div>
+        </div>
+        <div className="right">
+          <img src="./img/man.png" alt="worker" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Featured;
