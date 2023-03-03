@@ -19,7 +19,6 @@ function Login() {
       //store user data as json object
       localStorage.setItem('currentUser', JSON.stringify(res.data));
       navigate('/');
-      console.log(res.data);
     } catch (err) {
       setError(err.response.data);
       // console.log(err.response.data);
