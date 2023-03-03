@@ -54,7 +54,7 @@ const CheckoutForm = () => {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: 'http://localhost:5173/success',
+        return_url: 'https://bitgig.onrender.com/success',
       },
     });
     if (error.type === 'card_error' || error.type === 'validation_error') {
